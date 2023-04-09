@@ -22,14 +22,14 @@ class Model:
 
     @classmethod
     def get_all_data(cls, data):
-        query = "SELETE * FROM data_table"
+        query = "SELECT * FROM data_table"
         results = connectToMySQL(db).query_db(query)
         return results
 
     #Update
     @classmethod 
     def update_data(cls, data):
-        query = "UPDATE data_table SET data=%(data)s%"
+        query = "UPDATE data_table SET data=%(data)s"
         results = connectToMySQL(db).query_db(query, data)
         return results
 
